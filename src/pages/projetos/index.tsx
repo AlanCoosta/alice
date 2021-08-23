@@ -28,7 +28,9 @@ const Projects = ({ categories, projects }: IProject) => {
         shouldExcludeTitleSuffix
       />
 
-      <Link href="/">ALICE COSTA</Link>
+      <Link href="/">
+        <a href="/">ALICE COSTA</a>
+      </Link>
 
       <h1>
         {PrismicDOM.RichText.asText(

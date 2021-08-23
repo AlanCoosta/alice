@@ -26,7 +26,6 @@ const Project = ({ project, images }: ProjectProps) => {
         image="boost.png"
         shouldExcludeTitleSuffix
       />
-      <h1>Projetos</h1>
       <h1>{PrismicDOM.RichText.asText(project.data.title)}</h1>
       {images.map((item) => {
         return <img key={item} src={item} alt="" />;

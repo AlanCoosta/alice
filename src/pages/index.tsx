@@ -33,7 +33,9 @@ const Home = (): JSX.Element => {
           <Wrapper>
             <Header>
               <Link href="/projetos">
-                <Bag />
+                <a href="/projetos">
+                  <h1>Acesse minha pasta</h1>
+                </a>
               </Link>
             </Header>
 
@@ -71,13 +73,9 @@ const Home = (): JSX.Element => {
               </About>
 
               <Link href="/projetos">
-                <Folder>
-                  <p>ACESSE</p>
-
-                  <b>MINHA PASTA</b>
-
-                  <Bag />
-                </Folder>
+                <a href="/projetos">
+                  <h1>Acesse minha pasta</h1>
+                </a>
               </Link>
               <Contact>
                 <p>Para obter acesso ao currículo envie um email para:</p>
