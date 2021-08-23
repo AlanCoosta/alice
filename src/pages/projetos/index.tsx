@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import Prismic from "prismic-javascript";
@@ -29,75 +28,59 @@ const Projects = ({ categories, projects }: IProject) => {
         shouldExcludeTitleSuffix
       />
 
+      <Link href="/">ALICE COSTA</Link>
+
       <h1>
         {PrismicDOM.RichText.asText(
           categories.recentProjectsCategory.data.title
         )}
       </h1>
-      <div>
-        {projects.recentProjects.map((project) => {
-          return (
-            <div key={project.id}>
+
+      <div style={{ display: "flex" }}>
+        {projects.recentProjects.map((project) => (
+          <Link key={project.uid} href={`/projetos/${project.uid}`}>
+            <a href={`/projetos/${project.uid}`}>
               <img
                 src={project.data.images[0].image.url}
                 alt={project.data.images[0].image.alt}
               />
-              <Link href={`/projetos/${project.uid}`}>
-                <a>{PrismicDOM.RichText.asText(project.data.title)}</a>
-              </Link>
-              <p>{PrismicDOM.RichText.asText(project.data.description)}</p>
-
-              <br />
-              <br />
-            </div>
-          );
-        })}
+            </a>
+          </Link>
+        ))}
       </div>
 
       <h1>
         {PrismicDOM.RichText.asText(categories.highlightsCategory.data.title)}
       </h1>
-      <div>
-        {projects.highlights.map((project) => {
-          return (
-            <div key={project.id}>
+
+      <div style={{ display: "flex" }}>
+        {projects.highlights.map((project) => (
+          <Link key={project.uid} href={`/projetos/${project.uid}`}>
+            <a href={`/projetos/${project.uid}`}>
               <img
                 src={project.data.images[0].image.url}
                 alt={project.data.images[0].image.alt}
               />
-              <Link href={`/projetos/${project.uid}`}>
-                <a>{PrismicDOM.RichText.asText(project.data.title)}</a>
-              </Link>
-              <p>{PrismicDOM.RichText.asText(project.data.description)}</p>
-
-              <br />
-              <br />
-            </div>
-          );
-        })}
+            </a>
+          </Link>
+        ))}
       </div>
 
       <h1>
         {PrismicDOM.RichText.asText(categories.relevantCategory.data.title)}
       </h1>
-      <div>
-        {projects.relevant.map((project) => {
-          return (
-            <div key={project.id}>
+
+      <div style={{ display: "flex" }}>
+        {projects.relevant.map((project) => (
+          <Link key={project.uid} href={`/projetos/${project.uid}`}>
+            <a href={`/projetos/${project.uid}`}>
               <img
                 src={project.data.images[0].image.url}
                 alt={project.data.images[0].image.alt}
               />
-              <Link href={`/projetos/${project.uid}`}>
-                <a>{PrismicDOM.RichText.asText(project.data.title)}</a>
-              </Link>
-              <p>{PrismicDOM.RichText.asText(project.data.description)}</p>
-
-              <br />
-              <br />
-            </div>
-          );
-        })}
+            </a>
+          </Link>
+        ))}
       </div>
     </div>
   );

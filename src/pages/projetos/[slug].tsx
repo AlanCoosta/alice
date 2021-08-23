@@ -31,6 +31,7 @@ const Project = ({ project, images }: ProjectProps) => {
       {images.map((item) => {
         return <img key={item} src={item} alt="" />;
       })}
+      <p>{PrismicDOM.RichText.asText(project.data.description)}</p>
     </div>
   );
 };
