@@ -27,11 +27,33 @@ const Project = ({ project, images }: ProjectProps) => {
         image="boost.png"
         shouldExcludeTitleSuffix
       />
+
+      <div>
+        {images.map((item) => {
+          return <img key={item} src={item} alt="" />;
+        })}
+      </div>
+
       <h1>{PrismicDOM.RichText.asText(project.data.title)}</h1>
-      {images.map((item) => {
-        return <img key={item} src={item} alt="" />;
-      })}
-      <p>{PrismicDOM.RichText.asText(project.data.description)}</p>
+
+      <p
+        dangerouslySetInnerHTML={{
+          __html: PrismicDOM.RichText.asHtml(
+            project.data.description_development
+          ),
+        }}
+        style={{
+          color: "#c0d2ff",
+        }}
+      />
+
+      <br />
+
+      <p
+        dangerouslySetInnerHTML={{
+          __html: PrismicDOM.RichText.asHtml(project.data.description),
+        }}
+      />
     </div>
   );
 };
