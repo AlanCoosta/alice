@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import SEO from "@/components/SEO";
 import Link from "next/link";
 import Image from "next/image";
 import AvatarAlice from "../assets/images/avatar.png";
-import { Bag } from "@/assets/icons";
 import {
   AnimationContainer,
   Container,
@@ -13,7 +13,6 @@ import {
   Name,
   Description,
   About,
-  Folder,
   Contact,
   Footer,
   ImageContainer,

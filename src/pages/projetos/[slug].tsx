@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import { client } from "@/lib/prismic";

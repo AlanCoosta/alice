@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
+/* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import Prismic from "prismic-javascript";
