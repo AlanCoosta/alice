@@ -7,7 +7,16 @@ import PrismicDOM from "prismic-dom";
 import { client } from "@/lib/prismic";
 import { Document } from "prismic-javascript/types/documents";
 import SEO from "@/components/SEO";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+} from "swiper";
 
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 interface IProject {
   categories: {
     recentProjectsCategory: Document;
@@ -22,6 +31,20 @@ interface IProject {
 }
 
 const Projects = ({ categories, projects }: IProject) => {
+  const breakpoints = {
+    "640": {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    "768": {
+      slidesPerView: 2,
+      spaceBetween: 40,
+    },
+    "1024": {
+      slidesPerView: 3,
+      spaceBetween: 50,
+    },
+  };
   return (
     <div>
       <SEO
@@ -40,52 +63,85 @@ const Projects = ({ categories, projects }: IProject) => {
         )}
       </h1>
 
-      <div style={{ display: "flex" }}>
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        style={{ display: "flex" }}
+        breakpoints={breakpoints}
+        loop
+      >
         {projects.recentProjects.map((project) => (
-          <Link key={project.uid} href={`/projetos/${project.uid}`}>
-            <a href={`/projetos/${project.uid}`}>
-              <img
-                src={project.data.images[0].image.url}
-                alt={project.data.images[0].image.alt}
-              />
-            </a>
-          </Link>
+          <SwiperSlide key={project.uid}>
+            <Link href={`/projetos/${project.uid}`}>
+              <a href={`/projetos/${project.uid}`}>
+                <img
+                  src={project.data.images[0].image.url}
+                  alt={project.data.images[0].image.alt}
+                />
+              </a>
+            </Link>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       <h1>
         {PrismicDOM.RichText.asText(categories.highlightsCategory.data.title)}
       </h1>
 
-      <div style={{ display: "flex" }}>
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        style={{ display: "flex" }}
+        breakpoints={breakpoints}
+        loop
+      >
         {projects.highlights.map((project) => (
-          <Link key={project.uid} href={`/projetos/${project.uid}`}>
-            <a href={`/projetos/${project.uid}`}>
-              <img
-                src={project.data.images[0].image.url}
-                alt={project.data.images[0].image.alt}
-              />
-            </a>
-          </Link>
+          <SwiperSlide key={project.uid}>
+            <Link href={`/projetos/${project.uid}`}>
+              <a href={`/projetos/${project.uid}`}>
+                <img
+                  src={project.data.images[0].image.url}
+                  alt={project.data.images[0].image.alt}
+                />
+              </a>
+            </Link>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
 
       <h1>
         {PrismicDOM.RichText.asText(categories.relevantCategory.data.title)}
       </h1>
 
-      <div style={{ display: "flex" }}>
+      <Swiper
+        spaceBetween={20}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        style={{ display: "flex" }}
+        breakpoints={breakpoints}
+        loop
+      >
         {projects.relevant.map((project) => (
-          <Link key={project.uid} href={`/projetos/${project.uid}`}>
-            <a href={`/projetos/${project.uid}`}>
-              <img
-                src={project.data.images[0].image.url}
-                alt={project.data.images[0].image.alt}
-              />
-            </a>
-          </Link>
+          <SwiperSlide key={project.uid}>
+            <Link href={`/projetos/${project.uid}`}>
+              <a href={`/projetos/${project.uid}`}>
+                <img
+                  src={project.data.images[0].image.url}
+                  alt={project.data.images[0].image.alt}
+                />
+              </a>
+            </Link>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </div>
   );
 };
