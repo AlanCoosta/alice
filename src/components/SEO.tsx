@@ -10,12 +10,11 @@ interface SEOProps {
 
 const SEO = ({
   title,
-  description,
-  image,
+  description = "Publicitária, Designer, Diretora de Arte, Criativa",
+  image = "../assets/images/avatar.png",
   shouldExcludeTitleSuffix = false,
   shouldIndexPage = true,
 }: SEOProps) => {
-  // Gaules - Twitch
   const pageTitle = `${title} ${
     !shouldExcludeTitleSuffix ? "| DevCommerce" : ""
   }`;
@@ -30,6 +29,7 @@ const SEO = ({
 
       {description && <meta name="description" content={description} />}
       {image && <meta name="image" content={pageImage} />}
+      <meta />
 
       {!shouldIndexPage && <meta name="robots" content="noindex,nofollow" />}
 
@@ -52,16 +52,6 @@ const SEO = ({
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-
-      <meta name="twitter:title" content={pageTitle} />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@rocketseat" />
-      <meta name="twitter:creator" content="@rocketseat" />
-      <meta name="twitter:image" content={pageImage} />
-      <meta name="twitter:image:src" content={pageImage} />
-      <meta name="twitter:image:alt" content="Thumbnail" />
-      <meta name="twitter:image:width" content="1200" />
-      <meta name="twitter:image:height" content="620" />
     </Head>
   );
 };
