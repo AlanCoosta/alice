@@ -25,13 +25,11 @@ export const Container = styled.div`
       flex-direction: column;
 
       color: #c0d2ff;
-      font-family: "Gotham_Ultra-Bold";
     }
   }
 
   a {
     color: #525252;
-    font-family: "Gotham_Ultra-Bold";
     font-size: 1.6rem;
 
     :hover {
