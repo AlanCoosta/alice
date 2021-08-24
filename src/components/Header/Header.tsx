@@ -1,17 +1,18 @@
 import Link from "next/link";
-import { Container, NameLink } from "@/styles/components/Header.style";
+import {
+  Container,
+  MyFolderLink,
+  NameLink,
+} from "@/styles/components/Header.style";
 
 const Header = () => {
   return (
     <Container>
-      <div>
-        <Link href="/projetos">
-          <div className="logo">
-            <h1>MINHA</h1>
-            <h1>PASTA</h1>
-          </div>
-        </Link>
-      </div>
+      <Link href="/projetos">
+        <MyFolderLink href="/projetos">
+          <h1>MINHA PASTA</h1>
+        </MyFolderLink>
+      </Link>
 
       <Link href="/">
         <NameLink href="/">ALICE COSTA</NameLink>

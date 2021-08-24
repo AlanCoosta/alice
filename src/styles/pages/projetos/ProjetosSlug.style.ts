@@ -32,6 +32,15 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  .swiper-slide-container {
+    height: 400px;
+    margin-top: 2rem;
+
+    @media screen and (min-width: 600px) {
+      height: 600px;
+    }
+  }
 `;
 
 export const ProjectTitle = styled.h1`

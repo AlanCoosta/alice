@@ -5,45 +5,24 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  margin-top: 40px;
+  padding-top: 4rem;
+`;
 
-  > div {
-    a {
-      display: flex;
-      align-items: center;
-    }
+export const MyFolderLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
 
-    svg {
-      width: 40px;
-      height: 40px;
+  cursor: pointer;
+  text-decoration: none;
 
-      margin-right: 8px;
-    }
-
-    .logo {
-      display: flex;
-      flex-direction: column;
-
-      color: #c0d2ff;
-    }
-  }
-
-  a {
-    color: #525252;
-    font-size: 1.6rem;
-
-    :hover {
-      transform: scale(1.1);
-    }
-  }
+  color: #c0d2ff;
 `;
 
 export const NameLink = styled.a`
   display: inline-block;
   color: #525252;
   font-size: 1.6rem;
-
-  :hover {
-    transform: scale(1.1);
-  }
+  cursor: pointer;
+  text-decoration: none;
 `;

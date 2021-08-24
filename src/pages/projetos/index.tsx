@@ -77,9 +77,11 @@ const Projects = ({ categories, projects }: IProject) => {
           scrollbar={{ draggable: true }}
           breakpoints={breakpoints}
           loop
+          slidesPerView={2}
+          spaceBetween={20}
         >
           {projects.recentProjects.map((project) => (
-            <SwiperSlide key={project.uid} style={{ height: 256 }}>
+            <SwiperSlide key={project.uid} style={{ height: 156 }}>
               <Link href={`/projetos/${project.uid}`}>
                 <a>
                   <CardImage
@@ -106,9 +108,11 @@ const Projects = ({ categories, projects }: IProject) => {
           scrollbar={{ draggable: true }}
           breakpoints={breakpoints}
           loop
+          slidesPerView={2}
+          spaceBetween={20}
         >
           {projects.highlights.map((project) => (
-            <SwiperSlide key={project.uid} style={{ height: 256 }}>
+            <SwiperSlide key={project.uid} style={{ height: 156 }}>
               <Link href={`/projetos/${project.uid}`}>
                 <a>
                   <CardImage
@@ -135,9 +139,11 @@ const Projects = ({ categories, projects }: IProject) => {
           scrollbar={{ draggable: true }}
           breakpoints={breakpoints}
           loop
+          slidesPerView={2}
+          spaceBetween={20}
         >
           {projects.relevant.map((project) => (
-            <SwiperSlide key={project.uid} style={{ height: 256 }}>
+            <SwiperSlide key={project.uid} style={{ height: 156 }}>
               <Link href={`/projetos/${project.uid}`}>
                 <a>
                   <CardImage
