@@ -15,11 +15,53 @@ export const AnimationContainer = styled.div`
   animation: ${appearFromLeft} 1s;
 
   .swiper-button-prev {
-    display: none;
+    visibility: hidden;
+  }
+
+  .swiper-button-next {
+    color: #dedede;
   }
 `;
 
 export const Container = styled.div`
   max-width: 900px;
   margin: 0 auto;
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const ProjectTitle = styled.h1`
+  color: white;
+  margin-top: 3.2rem;
+`;
+
+export const CardImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const Contact = styled.div`
+  margin-top: 2rem;
+
+  > p {
+    color: #aeaeae;
+    font-size: 1.2rem;
+    text-align: center;
+
+    :last-child {
+      letter-spacing: 0.14em;
+      margin-top: 1.2rem;
+    }
+  }
+`;
+
+export const Footer = styled.p`
+  color: #aeaeae;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 40px 0;
 `;

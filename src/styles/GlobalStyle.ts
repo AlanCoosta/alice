@@ -7,7 +7,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background:#121214;
+    background: rgb(40, 40, 40);
     color:#fff;
     font-family: Roboto, Arial, Helvetica, sans-serif;
   }
@@ -17,7 +17,4 @@ export default createGlobalStyle`
     height: 300px;
     object-fit: contain;
   }
-
-  
-  
 `;

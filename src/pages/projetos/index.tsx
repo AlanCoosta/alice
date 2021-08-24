@@ -18,7 +18,12 @@ import SwiperCore, {
 import {
   AnimationContainer,
   Container,
+  ProjectTitle,
+  CardImage,
+  Contact,
+  Footer,
 } from "@/styles/pages/projetos/Projetos.style";
+import Header from "@/components/Header/Header";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 interface IProject {
@@ -41,12 +46,12 @@ const Projects = ({ categories, projects }: IProject) => {
       spaceBetween: 20,
     },
     "768": {
-      slidesPerView: 3,
-      spaceBetween: 20,
+      slidesPerView: 2,
+      spaceBetween: 40,
     },
     "1024": {
       slidesPerView: 3,
-      spaceBetween: 20,
+      spaceBetween: 40,
     },
   };
   return (
@@ -58,19 +63,15 @@ const Projects = ({ categories, projects }: IProject) => {
           shouldExcludeTitleSuffix
         />
 
-        <Link href="/">
-          <a href="/">ALICE COSTA</a>
-        </Link>
+        <Header />
 
-        <h1>
+        <ProjectTitle>
           {PrismicDOM.RichText.asText(
             categories.recentProjectsCategory.data.title
           )}
-        </h1>
+        </ProjectTitle>
 
         <Swiper
-          spaceBetween={20}
-          slidesPerView={2}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -78,15 +79,13 @@ const Projects = ({ categories, projects }: IProject) => {
           loop
         >
           {projects.recentProjects.map((project) => (
-            <SwiperSlide key={project.uid}>
+            <SwiperSlide key={project.uid} style={{ height: 256 }}>
               <Link href={`/projetos/${project.uid}`}>
-                <a href={`/projetos/${project.uid}`}>
-                  <img
+                <a>
+                  <CardImage
                     src={project.data.images[0].image.url}
                     alt={project.data.images[0].image.alt}
                     style={{
-                      width: 300,
-                      height: 156,
                       borderRadius: 8,
                       objectFit: "cover",
                     }}
@@ -97,13 +96,11 @@ const Projects = ({ categories, projects }: IProject) => {
           ))}
         </Swiper>
 
-        <h1>
+        <ProjectTitle>
           {PrismicDOM.RichText.asText(categories.highlightsCategory.data.title)}
-        </h1>
+        </ProjectTitle>
 
         <Swiper
-          spaceBetween={20}
-          slidesPerView={2}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -111,15 +108,13 @@ const Projects = ({ categories, projects }: IProject) => {
           loop
         >
           {projects.highlights.map((project) => (
-            <SwiperSlide key={project.uid}>
+            <SwiperSlide key={project.uid} style={{ height: 256 }}>
               <Link href={`/projetos/${project.uid}`}>
-                <a href={`/projetos/${project.uid}`}>
-                  <img
+                <a>
+                  <CardImage
                     src={project.data.images[0].image.url}
                     alt={project.data.images[0].image.alt}
                     style={{
-                      width: 300,
-                      height: 156,
                       borderRadius: 8,
                       objectFit: "cover",
                     }}
@@ -130,13 +125,11 @@ const Projects = ({ categories, projects }: IProject) => {
           ))}
         </Swiper>
 
-        <h1>
+        <ProjectTitle>
           {PrismicDOM.RichText.asText(categories.relevantCategory.data.title)}
-        </h1>
+        </ProjectTitle>
 
         <Swiper
-          spaceBetween={20}
-          slidesPerView={2}
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
@@ -144,15 +137,13 @@ const Projects = ({ categories, projects }: IProject) => {
           loop
         >
           {projects.relevant.map((project) => (
-            <SwiperSlide key={project.uid}>
+            <SwiperSlide key={project.uid} style={{ height: 256 }}>
               <Link href={`/projetos/${project.uid}`}>
-                <a href={`/projetos/${project.uid}`}>
-                  <img
+                <a>
+                  <CardImage
                     src={project.data.images[0].image.url}
                     alt={project.data.images[0].image.alt}
                     style={{
-                      width: 300,
-                      height: 156,
                       borderRadius: 8,
                       objectFit: "cover",
                     }}
@@ -162,6 +153,14 @@ const Projects = ({ categories, projects }: IProject) => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <Contact>
+          <p>Para obter acesso ao currículo envie um email para:</p>
+
+          <p>alice2320@hotmail.com</p>
+        </Contact>
+
+        <Footer>Designer by Alice Costa | Developed by Alan Costa</Footer>
       </Container>
     </AnimationContainer>
   );
