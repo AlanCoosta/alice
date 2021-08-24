@@ -33,7 +33,6 @@ const Project = ({ project, images }: ProjectProps) => {
           title={`${PrismicDOM.RichText.asText(
             project.data.title
           )} - Alice Costa`}
-          image="boost.png"
           shouldExcludeTitleSuffix
         />
 

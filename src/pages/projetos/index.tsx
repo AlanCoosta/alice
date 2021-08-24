@@ -57,11 +57,7 @@ const Projects = ({ categories, projects }: IProject) => {
   return (
     <AnimationContainer>
       <Container>
-        <SEO
-          title="Projetos - Alice Costa"
-          image="boost.png"
-          shouldExcludeTitleSuffix
-        />
+        <SEO title="Projetos - Alice Costa" shouldExcludeTitleSuffix />
 
         <Header />
 

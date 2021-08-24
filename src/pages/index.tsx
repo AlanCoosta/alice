@@ -20,11 +20,7 @@ import LinkFolder from "@/components/LinkFolder/LinkFolder";
 const Home = (): JSX.Element => {
   return (
     <div>
-      <SEO
-        title="Home - Alice Costa"
-        image="boost.png"
-        shouldExcludeTitleSuffix
-      />
+      <SEO title="Home - Alice Costa" shouldExcludeTitleSuffix />
 
       <AnimationContainer>
         <Container>

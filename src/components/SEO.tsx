@@ -11,11 +11,13 @@ interface SEOProps {
 const SEO = ({
   title,
   description = "Publicitária, Designer, Diretora de Arte, Criativa",
-  image = "../../public/favicon.ico",
+  image = "avatar.png",
   shouldExcludeTitleSuffix = false,
   shouldIndexPage = true,
 }: SEOProps) => {
-  const pageTitle = `${title} ${!shouldExcludeTitleSuffix ? "- Alice" : ""}`;
+  const pageTitle = `${title} ${
+    !shouldExcludeTitleSuffix ? "- Alice Costa" : ""
+  }`;
 
   const pageImage = image
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/${image}`
@@ -30,7 +32,7 @@ const SEO = ({
 
       {!shouldIndexPage && <meta name="robots" content="noindex,nofollow" />}
 
-      <link rel="icon" href="../../public/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
 
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
       <meta name="MobileOptimized" content="320" />
