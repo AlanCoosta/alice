@@ -1,4 +1,4 @@
-const NotFound = (): JSX.Element => {
+const NotFound500 = (): JSX.Element => {
   return (
     <div>
       <h1>Page not found</h1>
@@ -7,4 +7,4 @@ const NotFound = (): JSX.Element => {
   );
 };
 
-export default NotFound;
+export default NotFound500;
