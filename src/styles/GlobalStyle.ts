@@ -17,5 +17,7 @@ export default createGlobalStyle`
     height: 300px;
     object-fit: contain;
   }
+
+  
   
 `;

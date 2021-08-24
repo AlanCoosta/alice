@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
     "next": "11.1.0",
     "prismic-dom": "^2.2.6",
     "prismic-javascript": "^3.0.2",

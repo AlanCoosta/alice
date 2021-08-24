@@ -6,10 +6,8 @@ import AvatarAlice from "../assets/images/avatar.png";
 import {
   AnimationContainer,
   Container,
-  Wrapper,
   Header,
   Content,
-  Profile,
   Name,
   Description,
   About,
@@ -17,6 +15,7 @@ import {
   Footer,
   ImageContainer,
 } from "../styles/pages/Home.style";
+import LinkFolder from "@/components/LinkFolder/LinkFolder";
 
 const Home = (): JSX.Element => {
   return (
@@ -29,64 +28,56 @@ const Home = (): JSX.Element => {
 
       <AnimationContainer>
         <Container>
-          <Wrapper>
-            <Header>
-              <Link href="/projetos">
-                <a href="/projetos">
-                  <h1>Acesse minha pasta</h1>
-                </a>
-              </Link>
-            </Header>
+          <Header>
+            <Link href="/projetos">
+              <LinkFolder href="/projetos" />
+            </Link>
+          </Header>
 
-            <Content>
-              <ImageContainer>
-                <Name>
-                  <h1>ALICE</h1>
-                  <h1>COSTA</h1>
-                </Name>
+          <Content>
+            <ImageContainer>
+              <Name>
+                <h1>ALICE</h1>
+                <h1>COSTA</h1>
+              </Name>
 
-                <Image src={AvatarAlice} alt="Alice Costa Foto" />
-              </ImageContainer>
+              <Image src={AvatarAlice} alt="Alice Costa Foto" />
+            </ImageContainer>
 
-              <Profile>
-                <Description>
-                  <p>Publicitária</p>
-                  <p>Designer</p>
-                  <p>Diretora de Arte</p>
-                  <p>Criativa</p>
-                </Description>
-              </Profile>
-              <About>
-                <p>
-                  Atualmente, contratada pela Rádio 93FM, empresa do Grupo MK de
-                  Comunicação. Trabalho com elaboração de marcas, identidade
-                  visual e comunicação para redes sociais/campanhas/concursos
-                  projetos e eventos.
-                </p>
+            <Description>
+              <p>Publicitária</p>
+              <p>Designer</p>
+              <p>Diretora de Arte</p>
+              <p>Criativa</p>
+            </Description>
 
-                <p>
-                  Atendo também, de forma isolada e excepcional, as outras
-                  empresas do Grupo, como a Gravadora MK Music, portal de
-                  notícias Pleno.News e MK Network.
-                </p>
-              </About>
+            <About>
+              <p>
+                Atualmente, contratada pela Rádio 93FM, empresa do Grupo MK de
+                Comunicação. Trabalho com elaboração de marcas, identidade
+                visual e comunicação para redes sociais, campanhas, concursos
+                projetos e eventos.
+              </p>
 
-              <Link href="/projetos">
-                <a href="/projetos">
-                  <h1>Acesse minha pasta</h1>
-                </a>
-              </Link>
-              <Contact>
-                <p>Para obter acesso ao currículo envie um email para:</p>
+              <p>
+                Atendo também, de forma isolada e excepcional, as outras
+                empresas do Grupo, como a Gravadora MK Music, portal de notícias
+                Pleno.News e MK Network.
+              </p>
+            </About>
 
-                <p>alice2320@hotmail.com</p>
-              </Contact>
+            <Link href="/projetos">
+              <LinkFolder />
+            </Link>
 
-              <Footer>
-                <p>Designer by Alice Costa | Developed by Alan Costa</p>
-              </Footer>
-            </Content>
-          </Wrapper>
+            <Contact>
+              <p>Para obter acesso ao currículo envie um email para:</p>
+
+              <p>alice2320@hotmail.com</p>
+            </Contact>
+
+            <Footer>Designer by Alice Costa | Developed by Alan Costa</Footer>
+          </Content>
         </Container>
       </AnimationContainer>
     </div>

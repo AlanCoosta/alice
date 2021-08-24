@@ -15,6 +15,10 @@ import SwiperCore, {
   A11y,
   Autoplay,
 } from "swiper";
+import {
+  AnimationContainer,
+  Container,
+} from "@/styles/pages/projetos/Projetos.style";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
 interface IProject {
@@ -37,112 +41,129 @@ const Projects = ({ categories, projects }: IProject) => {
       spaceBetween: 20,
     },
     "768": {
-      slidesPerView: 2,
-      spaceBetween: 40,
+      slidesPerView: 3,
+      spaceBetween: 20,
     },
     "1024": {
       slidesPerView: 3,
-      spaceBetween: 50,
+      spaceBetween: 20,
     },
   };
   return (
-    <div>
-      <SEO
-        title="Projetos - Alice Costa"
-        image="boost.png"
-        shouldExcludeTitleSuffix
-      />
+    <AnimationContainer>
+      <Container>
+        <SEO
+          title="Projetos - Alice Costa"
+          image="boost.png"
+          shouldExcludeTitleSuffix
+        />
 
-      <Link href="/">
-        <a href="/">ALICE COSTA</a>
-      </Link>
+        <Link href="/">
+          <a href="/">ALICE COSTA</a>
+        </Link>
 
-      <h1>
-        {PrismicDOM.RichText.asText(
-          categories.recentProjectsCategory.data.title
-        )}
-      </h1>
+        <h1>
+          {PrismicDOM.RichText.asText(
+            categories.recentProjectsCategory.data.title
+          )}
+        </h1>
 
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        style={{ display: "flex" }}
-        breakpoints={breakpoints}
-        loop
-      >
-        {projects.recentProjects.map((project) => (
-          <SwiperSlide key={project.uid}>
-            <Link href={`/projetos/${project.uid}`}>
-              <a href={`/projetos/${project.uid}`}>
-                <img
-                  src={project.data.images[0].image.url}
-                  alt={project.data.images[0].image.alt}
-                />
-              </a>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={2}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          breakpoints={breakpoints}
+          loop
+        >
+          {projects.recentProjects.map((project) => (
+            <SwiperSlide key={project.uid}>
+              <Link href={`/projetos/${project.uid}`}>
+                <a href={`/projetos/${project.uid}`}>
+                  <img
+                    src={project.data.images[0].image.url}
+                    alt={project.data.images[0].image.alt}
+                    style={{
+                      width: 300,
+                      height: 156,
+                      borderRadius: 8,
+                      objectFit: "cover",
+                    }}
+                  />
+                </a>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <h1>
-        {PrismicDOM.RichText.asText(categories.highlightsCategory.data.title)}
-      </h1>
+        <h1>
+          {PrismicDOM.RichText.asText(categories.highlightsCategory.data.title)}
+        </h1>
 
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        style={{ display: "flex" }}
-        breakpoints={breakpoints}
-        loop
-      >
-        {projects.highlights.map((project) => (
-          <SwiperSlide key={project.uid}>
-            <Link href={`/projetos/${project.uid}`}>
-              <a href={`/projetos/${project.uid}`}>
-                <img
-                  src={project.data.images[0].image.url}
-                  alt={project.data.images[0].image.alt}
-                />
-              </a>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={2}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          breakpoints={breakpoints}
+          loop
+        >
+          {projects.highlights.map((project) => (
+            <SwiperSlide key={project.uid}>
+              <Link href={`/projetos/${project.uid}`}>
+                <a href={`/projetos/${project.uid}`}>
+                  <img
+                    src={project.data.images[0].image.url}
+                    alt={project.data.images[0].image.alt}
+                    style={{
+                      width: 300,
+                      height: 156,
+                      borderRadius: 8,
+                      objectFit: "cover",
+                    }}
+                  />
+                </a>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      <h1>
-        {PrismicDOM.RichText.asText(categories.relevantCategory.data.title)}
-      </h1>
+        <h1>
+          {PrismicDOM.RichText.asText(categories.relevantCategory.data.title)}
+        </h1>
 
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={1}
-        navigation
-        pagination={{ clickable: true }}
-        scrollbar={{ draggable: true }}
-        style={{ display: "flex" }}
-        breakpoints={breakpoints}
-        loop
-      >
-        {projects.relevant.map((project) => (
-          <SwiperSlide key={project.uid}>
-            <Link href={`/projetos/${project.uid}`}>
-              <a href={`/projetos/${project.uid}`}>
-                <img
-                  src={project.data.images[0].image.url}
-                  alt={project.data.images[0].image.alt}
-                />
-              </a>
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={2}
+          navigation
+          pagination={{ clickable: true }}
+          scrollbar={{ draggable: true }}
+          breakpoints={breakpoints}
+          loop
+        >
+          {projects.relevant.map((project) => (
+            <SwiperSlide key={project.uid}>
+              <Link href={`/projetos/${project.uid}`}>
+                <a href={`/projetos/${project.uid}`}>
+                  <img
+                    src={project.data.images[0].image.url}
+                    alt={project.data.images[0].image.alt}
+                    style={{
+                      width: 300,
+                      height: 156,
+                      borderRadius: 8,
+                      objectFit: "cover",
+                    }}
+                  />
+                </a>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Container>
+    </AnimationContainer>
   );
 };
 
