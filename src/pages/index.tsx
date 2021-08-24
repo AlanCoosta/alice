@@ -67,7 +67,7 @@ const Home = (): JSX.Element => {
             </About>
 
             <Link href="/projetos">
-              <LinkFolder />
+              <LinkFolder href="/projetos" />
             </Link>
 
             <Contact>
